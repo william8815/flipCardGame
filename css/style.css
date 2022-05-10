@@ -1,7 +1,13 @@
-@charset "UTF-8";
-#header {
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
   width: 85%;
+  margin: 1.5rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,54 +20,46 @@
           align-items: flex-end;
 }
 
-#header .title {
-  width: 100%;
+.header section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
-#header .title img {
+.header section img {
   max-width: 3em;
 }
 
-#header .title h2 {
-  padding-left: 0.5em;
+.header section h2 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: .5rem;
 }
 
-#header .score {
-  margin: 0;
+.header .score {
   color: #6c90ac;
 }
 
-#header .tried {
-  margin-top: 0;
-}
-
 #cards {
+  margin: 0 auto;
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 85%;
-  /* 新增：寬度和標頭一致 */
-  margin: 0 auto;
-  /* 新增：置中 */
 }
 
 #cards .card {
-  -webkit-box-flex: 7%;
-      -ms-flex: 7% 1 1;
-          flex: 7% 1 1;
-  height: 8vw;
-  border: 1px solid #000;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 7%;
+          flex: 1 1 7%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,9 +69,16 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border: 2px solid #000;
+  height: 8vw;
   margin: 2px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+}
+
+#cards .card img {
+  max-width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #cards .card p {
@@ -86,20 +91,13 @@
           transform: rotate(180deg);
 }
 
-#cards .card img {
-  max-width: 30%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 #cards .back {
-  background-image: url(../img/cardBack.png);
+  background-image: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
   background-size: cover;
 }
 
-.paired {
-  background-color: #929292;
+#cards .paired {
+  background-color: #dae0e3;
 }
 
 .wrong {
@@ -123,24 +121,23 @@
   }
 }
 
-/** Game finished **/
-.completed {
-  position: absolute;
-  z-index: 999;
-  top: 33vh;
-  background-color: RGBA(232, 246, 254, 0.8);
+.complete {
+  background-color: rgba(232, 246, 254, 0.8);
   width: 100vw;
   padding: 50px 0;
+  text-align: center;
+  position: absolute;
+  top: 33vh;
+  z-index: 999;
 }
 
-.completed p {
+.complete p {
   font-size: 1.5em;
   color: black;
-  text-align: center;
   margin: 0;
 }
 
-.completed p:first-child {
+.complete p:first-child {
   font-size: 3em;
   font-weight: 700;
   color: #758d9a;
